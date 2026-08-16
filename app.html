@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Faturamais</title>
+  <meta name="description" content="Dashboard de faturamento e gestão do Faturamais. Controle vendas, clientes, produtos e finanças.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar" aria-label="Menu lateral">
+      <div class="logo" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:28px;height:28px;color:var(--accent);"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        Faturamais
+      </div>
+      <nav id="main-nav" aria-label="Navegação do dashboard">
+        <button type="button" class="nav-item active" data-page="dashboard" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          Dashboard
+        </button>
+        <button type="button" class="nav-item" data-page="vendas">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Vendas
+        </button>
+        <button type="button" class="nav-item" data-page="clientes">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Clientes
+        </button>
+        <button type="button" class="nav-item" data-page="produtos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          Produtos
+        </button>
+        <button type="button" class="nav-item" data-page="financeiro">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Financeiro
+        </button>
+        <button type="button" class="nav-item" data-page="config">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Configurações
+        </button>
+      </nav>
+    </aside>
+
+    <main class="main" id="main-content" tabindex="-1" aria-label="Conteúdo principal">
+      <header class="topbar" role="banner">
+        <h1 id="page-title">Dashboard</h1>
+        <div class="user">
+          <button type="button" class="tema-btn" id="tema-btn" aria-label="Alternar entre tema claro e escuro" title="Alternar tema">
+            <svg id="tema-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <span>Administrador</span>
+          <div class="avatar" aria-label="Avatar do usuário">AD</div>
+        </div>
+      </header>
+
+      <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+      <div class="content" id="view-dashboard"></div>
+      <div class="content" id="view-vendas" style="display:none"></div>
+      <div class="content" id="view-clientes" style="display:none"></div>
+      <div class="content" id="view-produtos" style="display:none"></div>
+      <div class="content" id="view-financeiro" style="display:none"></div>
+      <div class="content" id="view-config" style="display:none"></div>
+
+      <footer class="dash-footer" role="contentinfo">
+        <p><strong>Demonstração do Faturamais</strong> — dados ilustrativos.</p>
+        <p><a href="index.html">Voltar para o site</a> · Desenvolvido por <a href="https://expostacker.com.br" target="_blank" rel="noopener">ExpoStacker</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <button type="button" class="mobile-menu-toggle" id="sidebar-toggle" aria-label="Abrir menu" aria-expanded="false" style="position:fixed;top:1rem;left:1rem;z-index:100;background:var(--surface);border:1px solid var(--border);border-radius:50%;width:44px;height:44px;display:none;align-items:center;justify-content:center;color:var(--text);">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

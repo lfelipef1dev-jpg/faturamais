@@ -1,0 +1,8 @@
+{
+  "name": "faturamais",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p out && cp index.html app.html app.js style.css favicon.svg out/"
+  }
+}
