@@ -183,6 +183,28 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.3; font-weight: 700; }
   color: var(--text);
 }
 .logo svg { width: 24px; height: 24px; color: var(--primary); }
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+.logo-img-footer {
+  height: 40px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.logo-img-sidebar {
+  height: 34px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+@media (max-width: 768px) {
+  .logo-img { height: 30px; }
+  .logo-img-footer { height: 34px; }
+  .logo-img-sidebar { height: 28px; }
+}
 .nav-links {
   display: flex;
   align-items: center;
