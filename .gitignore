@@ -1,6 +1,6 @@
 node_modules/
 out/
 .DS_Store
-
 .wrangler/
-
+test-results/
+playwright-report/

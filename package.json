@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "serve": "http-server . -p 3000 -s",
+    "lint": "eslint *.js",
+    "test": "npm run build && npx playwright test",
+    "test:e2e": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "eslint": "^10.10.0",
+    "http-server": "^14.1.1"
   }
 }

@@ -42,7 +42,7 @@
       for (let i = 0; i < 12; i++) { fluxoData.push({ label: 'S' + (i + 1), value: 15000 + Math.random() * 8000 - 3000 }); }
 
       return '<div class="page-header"><h1>Visão geral</h1><p>Financial Command Center — ambiente demonstrativo</p></div>' +
-        '<div class="chart-card" style="margin-bottom:var(--sp-5)"><div style="display:flex;justify-content:space-between;align-items:flex-end"><div><div class="fcc-mega">R$ 184.720</div><div class="fcc-mega-label">Receita líquida no mês</div><div class="fcc-mega-change">▲ +12,8% vs. período anterior</div></div><div style="text-align:right"><span class="badge-status badge-success">Fechado</span><div style="font-size:var(--fs-xs);color:var(--text-muted);margin-top:var(--sp-2)">Jul/2026</div></div></div></div>' +
+        '<div class="chart-card" style="margin-bottom:var(--sp-5)"><div style="display:flex;justify-content:space-between;align-items:flex-end"><div><div class="fcc-mega">' + fmtBRL(m.totalReceita) + '</div><div class="fcc-mega-label">Receita líquida no mês</div><div class="fcc-mega-change">Período Jul/2026 — dados fictícios</div></div><div style="text-align:right"><span class="badge-status badge-success">Fechado</span><div style="font-size:var(--fs-xs);color:var(--text-muted);margin-top:var(--sp-2)">Jul/2026</div></div></div></div>' +
         '<div class="kpi-row">' +
         '<div class="kpi-tile"><div class="kpi-tile-label">A receber</div><div class="kpi-tile-value">' + fmtBRL(m.aReceber) + '</div><div class="kpi-tile-sub">' + receivables.length + ' documentos</div></div>' +
         '<div class="kpi-tile"><div class="kpi-tile-label">A pagar</div><div class="kpi-tile-value negative">' + fmtBRL(m.aPagar) + '</div><div class="kpi-tile-sub">6 contas em aberto</div></div>' +
