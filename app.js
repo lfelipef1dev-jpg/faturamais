@@ -393,10 +393,11 @@
     const circ = 2 * Math.PI * r;
     const offset = circ - (value / 100) * circ;
     const color = opts.color || '#0F766E';
-    return '<svg class="chart-svg" viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + value + '%">' +
+    const displayValue = (typeof value === 'number' ? value : Number(value)).toFixed(1);
+    return '<svg class="chart-svg" viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + displayValue + '%">' +
       '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#E4E7EC" stroke-width="12"/>' +
       '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="' + color + '" stroke-width="12" stroke-dasharray="' + circ + '" stroke-dashoffset="' + offset + '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>' +
-      '<text x="' + cx + '" y="' + (cy + 5) + '" text-anchor="middle" font-size="22" font-weight="700" fill="' + color + '">' + value + '%</text></svg>';
+      '<text x="' + cx + '" y="' + (cy + 5) + '" text-anchor="middle" font-size="22" font-weight="700" fill="' + color + '">' + displayValue + '%</text></svg>';
   }
 
   /* ===== EXPORT ===== */
