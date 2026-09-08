@@ -5,7 +5,7 @@ const path = require('path');
 const outDir = path.join(__dirname, 'out');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-const files = ['index.html', 'app.html', 'app.js', 'views.js', 'data.js', 'style.css', 'favicon.svg', 'favicon.png', 'og-image.png', 'robots.txt', 'sitemap.xml'];
+const files = ['index.html', 'app.html', 'privacidade.html', 'termos.html', 'cookies.html', 'acessibilidade.html', 'mapa-site.html', 'app.js', 'views.js', 'data.js', 'style.css', 'favicon.svg', 'favicon.png', 'og-image.png', 'robots.txt', 'sitemap.xml'];
 files.forEach(function (f) {
   const src = path.join(__dirname, f);
   if (fs.existsSync(src)) {
