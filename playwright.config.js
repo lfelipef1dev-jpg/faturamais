@@ -14,7 +14,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   webServer: {
-    command: 'npx http-server . -p 9000 -s',
+    command: 'npx http-server out -p 9000 -s',
     url: 'http://localhost:9000',
     reuseExistingServer: false,
     timeout: 120000,

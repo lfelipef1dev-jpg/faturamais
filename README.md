@@ -25,7 +25,7 @@ Projeto de portfólio da ExpoStacker: sistema de faturamento e gestão para e-co
 ```bash
 npm install
 npm run build    # gera out/
-npm run serve    # http://localhost:3000  (acessar /app.html localmente)
+npm run serve    # http://localhost:3000  (serve a pasta out/)
 npm run lint     # verifica qualidade do JS
 npm run test     # build + testes E2E com Playwright
 npm run test:e2e # só os testes E2E
@@ -38,7 +38,7 @@ A SPA é carregada por `app.html` com hash-router (`/#/dashboard`).
 - `http://localhost:3000` — landing page
 - `http://localhost:3000/app.html` — dashboard
 
-Em produção (Cloudflare Pages) a pretty URL `/app` redireciona para `app.html`.
+O comando `npm run serve` serve a pasta `out/` gerada por `npm run build`.
 
 ## Testes
 

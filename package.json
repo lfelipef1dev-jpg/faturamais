@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
-    "serve": "http-server . -p 3000 -s",
+    "serve": "http-server out -p 3000 -s",
     "lint": "eslint *.js",
     "test": "npm run build && npx playwright test",
     "test:e2e": "npx playwright test"
