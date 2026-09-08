@@ -6,3 +6,4 @@ test-results/
 playwright-report/
 lighthouse-*.json
 *.commit-msg.txt
+screenshots/
