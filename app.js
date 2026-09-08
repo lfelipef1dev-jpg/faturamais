@@ -99,6 +99,15 @@
     try {
       const html = handler(params, content);
       if (html) content.innerHTML = html;
+      // Wrap all data tables in responsive containers
+      $$('.data-table').forEach(function (t) {
+        if (!t.parentElement.classList.contains('table-responsive')) {
+          const w = document.createElement('div');
+          w.className = 'table-responsive';
+          t.parentNode.insertBefore(w, t);
+          w.appendChild(t);
+        }
+      });
       content.scrollTop = 0;
     } catch (e) {
       content.innerHTML = '<div class="empty-state"><h3>Erro ao carregar</h3><p>' + esc(e.message) + '</p></div>';
@@ -369,8 +378,9 @@
     const labelEls = labels.map(function (l, i) {
       return '<text x="' + (40 + i * stepX) + '" y="' + (h - 10) + '" text-anchor="middle" font-size="10" fill="#98A2B3">' + esc(l) + '</text>';
     }).join('');
-    const legend = series.map(function (s) {
-      return '<rect x="10" y="5" width="12" height="12" rx="2" fill="' + s.color + '"/><text x="28" y="15" font-size="11" fill="#475467">' + esc(s.name) + '</text>';
+    const legend = series.map(function (s, i) {
+      const x = 10 + i * 80;
+      return '<g transform="translate(' + x + ',5)"><rect width="12" height="12" rx="2" fill="' + s.color + '"/><text x="18" y="10" font-size="11" fill="#475467">' + esc(s.name) + '</text></g>';
     }).join('');
     return '<svg class="chart-svg" viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + esc(opts.label || 'Gráfico') + '">' +
       '<g transform="translate(0,0)">' + legend + '</g>' + lines + labelEls + '</svg>';
