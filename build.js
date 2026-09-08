@@ -27,4 +27,25 @@ if (fs.existsSync(brandDir)) {
   });
 }
 
+// Copy public images directory
+const imagesDir = path.join(__dirname, 'public', 'images');
+const outImagesDir = path.join(outDir, 'images');
+if (fs.existsSync(imagesDir)) {
+  fs.mkdirSync(outImagesDir, { recursive: true });
+  function copyDir(src, dst) {
+    fs.readdirSync(src).forEach(function (f) {
+      const s = path.join(src, f);
+      const d = path.join(dst, f);
+      if (fs.statSync(s).isDirectory()) {
+        fs.mkdirSync(d, { recursive: true });
+        copyDir(s, d);
+      } else {
+        fs.copyFileSync(s, d);
+        console.log('  ✓ ' + path.relative(outDir, d));
+      }
+    });
+  }
+  copyDir(imagesDir, outImagesDir);
+}
+
 console.log('Build concluído — ' + files.length + ' arquivos em out/');

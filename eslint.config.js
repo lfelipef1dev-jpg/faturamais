@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig({
   files: ['*.js'],
-  ignores: ['build.js', 'playwright.config.js', 'eslint.config.js', 'out/**', 'node_modules/**', 'tests/**'],
+  ignores: ['build.js', 'playwright.config.js', 'eslint.config.js', 'screenshots.js', 'out/**', 'node_modules/**', 'tests/**'],
   languageOptions: {
     ecmaVersion: 2022,
     sourceType: 'script',

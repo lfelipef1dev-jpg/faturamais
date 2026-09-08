@@ -353,7 +353,60 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.3; font-weight: 700; }
   margin-top: 2px;
 }
 
-/* Sections */
+/* Hero premium with generated image */
+.hero-premium {
+  color: #fff;
+  padding: var(--sp-12) 0;
+}
+.hero-premium .hero-bg,
+.cta-premium .cta-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-premium .display,
+.hero-premium h1 {
+  color: #fff;
+}
+.hero-premium p:not(.hero-eyebrow) {
+  color: rgba(255,255,255,0.85);
+}
+.hero-premium .hero-kpi-value {
+  color: #fff;
+  font-size: var(--fs-lg);
+}
+.hero-premium .hero-kpi-label {
+  color: rgba(255,255,255,0.65);
+}
+.hero-premium .demo-tag {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+  border-color: rgba(255,255,255,0.2);
+}
+.hero-visual-image {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+.hero-premium .hero-grid > div:first-child {
+  z-index: 2;
+}
+.journey-visual {
+  margin-top: var(--sp-8);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* CTA premium */
+.cta-premium {
+  padding: var(--sp-12) 0;
+  color: #fff;
+}
 .section { padding: var(--sp-10) 0; }
 .section-alt { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .text-center { text-align: center; }

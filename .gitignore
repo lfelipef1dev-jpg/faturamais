@@ -4,3 +4,4 @@ out/
 .wrangler/
 test-results/
 playwright-report/
+lighthouse-*.json
